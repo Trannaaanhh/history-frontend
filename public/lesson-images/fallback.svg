@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Minh họa lịch sử Việt Nam">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7f1d1d"/>
+      <stop offset="1" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="940" cy="170" r="110" fill="#fbbf24" opacity=".9"/>
+  <path d="M0 510 190 390l150 85 210-190 225 200 150-95 275 150v135H0Z" fill="#450a0a" opacity=".55"/>
+  <path d="M510 410h180v125H510zM470 410l130-105 130 105zM555 335h90v-68h-90z" fill="#fff7ed" opacity=".9"/>
+  <text x="600" y="610" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="38" font-weight="700">LỊCH SỬ VIỆT NAM</text>
+</svg>
