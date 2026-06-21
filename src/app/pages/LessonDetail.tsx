@@ -30,7 +30,7 @@ const LessonDetail: React.FC = () => {
     return (
       <div className="container mx-auto px-4 py-32 text-center">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Không tìm thấy bài học</h2>
-        <Button asChild className="bg-red-600 rounded-full px-8">
+        <Button asChild className="rounded-xl bg-red-600 px-8">
           <Link to="/lessons">Quay lại danh sách</Link>
         </Button>
       </div>
@@ -38,37 +38,37 @@ const LessonDetail: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex min-h-screen flex-col bg-white">
       {/* Hero Header */}
-      <div className="relative h-[300px] md:h-[450px] w-full overflow-hidden">
+      <div className="relative h-[360px] w-full overflow-hidden md:h-[480px]">
         <ImageWithFallback
           src={lesson.imageUrl}
           alt={lesson.title}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-red-800/60" />
         <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 lg:p-20">
-          <div className="container mx-auto">
+          <div className="mx-auto max-w-7xl">
             <Link to="/lessons" className="text-white/70 hover:text-white flex items-center gap-1 text-xs font-bold uppercase tracking-wider mb-6 transition-colors">
               <ChevronLeft className="h-4 w-4" /> Thư viện bài học
             </Link>
-            <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 max-w-4xl tracking-tight leading-tight">
+            <h1 className="mb-6 max-w-4xl font-serif text-4xl font-bold italic leading-tight tracking-tight text-white md:text-6xl">
               {lesson.title}
             </h1>
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-white/90 font-medium">
-              <span className="flex items-center gap-2 text-sm"><Clock className="h-4 w-4 text-red-500" /> {lesson.duration} phút học</span>
-              <span className="flex items-center gap-2 text-sm"><Award className="h-4 w-4 text-amber-500" /> {lesson.difficulty}</span>
-              <span className="flex items-center gap-2 text-sm text-amber-400 font-bold tracking-widest uppercase">{lesson.period}</span>
+              <span className="flex items-center gap-2 text-sm"><Clock className="h-4 w-4 text-white" /> {lesson.duration} phút học</span>
+              <span className="flex items-center gap-2 text-sm"><Award className="h-4 w-4 text-amber-50" /> {lesson.difficulty}</span>
+              <span className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-amber-50">{lesson.period}</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="container mx-auto px-4 py-12 md:py-20">
-        <div className="flex flex-col lg:flex-row gap-12 xl:gap-20">
+      <div className="mx-auto w-full max-w-7xl px-6 py-14 sm:px-10 md:py-20">
+        <div className="flex flex-col gap-12 lg:flex-row xl:gap-20">
           {/* Main Content */}
-          <article className="flex-grow max-w-3xl">
+          <article className="max-w-3xl flex-grow">
             <div className="prose prose-red max-w-none">
               <MarkdownRenderer content={lesson.content} />
             </div>
@@ -102,7 +102,7 @@ const LessonDetail: React.FC = () => {
           {/* Sidebar */}
           <aside className="lg:w-80 flex-shrink-0">
             <div className="sticky top-24 space-y-6">
-              <Card className="border border-red-100 bg-red-50/20 overflow-hidden shadow-none rounded-2xl">
+              <Card className="overflow-hidden rounded-2xl border border-gray-200 bg-red-50 shadow-none">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-red-800 mb-5 flex items-center gap-2">
                     <BookOpen className="h-5 w-5" /> Thông tin bài học
@@ -110,7 +110,7 @@ const LessonDetail: React.FC = () => {
                   <div className="space-y-5 mb-8">
                     <div>
                       <p className="text-[10px] text-gray-400 uppercase font-black tracking-widest mb-1.5">Mức độ</p>
-                      <Badge variant="outline" className="bg-white text-red-700 border-red-100 font-bold px-3 py-1 rounded-full">
+                      <Badge variant="outline" className="rounded-xl border-red-600/20 bg-white px-3 py-1 font-bold text-red-600">
                         {lesson.difficulty}
                       </Badge>
                     </div>
@@ -129,7 +129,7 @@ const LessonDetail: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  <Button asChild className="w-full bg-red-600 hover:bg-red-700 shadow-lg shadow-red-100 h-12 rounded-xl text-sm font-bold">
+                  <Button asChild className="h-12 w-full rounded-xl bg-red-600 text-sm font-bold hover:bg-red-800">
                     <Link to={`/quiz/${lesson.id}`} className="flex items-center justify-center gap-2">
                       <PlayCircle className="h-5 w-5" /> Bắt đầu Quiz
                     </Link>

@@ -94,16 +94,16 @@ const AIChat: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-50/50 h-[calc(100dvh-64px)] min-h-0 flex flex-col overflow-hidden">
+    <div className="flex h-[calc(100dvh-72px)] min-h-0 flex-col overflow-hidden bg-red-50">
       <div className="container mx-auto max-w-5xl min-h-0 flex-1 flex flex-col p-4 md:p-6 lg:p-8 overflow-hidden">
         
         {/* Header */}
         <div className="flex shrink-0 items-center gap-4 mb-4 md:mb-6">
-          <div className="h-12 w-12 rounded-2xl bg-red-600 flex items-center justify-center text-white shadow-xl shadow-red-200">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-red-600 text-white">
             <Bot className="h-7 w-7" />
           </div>
           <div>
-            <h1 className="text-2xl font-black text-gray-900 flex items-center gap-3 tracking-tight">
+            <h1 className="flex items-center gap-3 font-serif text-2xl font-bold text-red-800">
               Trợ lý Lịch sử AI <Badge className="bg-amber-100 text-amber-700 hover:bg-amber-100 border-none text-[10px] font-black tracking-widest px-2 py-0.5">RAG ENABLED</Badge>
             </h1>
             <p className="text-[11px] text-gray-400 font-bold uppercase tracking-widest">Đang trực tuyến | Cơ sở dữ liệu THPT chính thống</p>
@@ -111,7 +111,7 @@ const AIChat: React.FC = () => {
         </div>
 
         {/* Chat Area */}
-        <Card className="min-h-0 flex-1 border-none shadow-2xl shadow-gray-200/40 rounded-[2.5rem] overflow-hidden flex flex-col bg-white relative">
+        <Card className="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-none">
           <div
             ref={chatScrollRef}
             className="min-h-0 flex-1 overflow-y-auto overscroll-contain scroll-smooth"
@@ -123,7 +123,7 @@ const AIChat: React.FC = () => {
                   msg.role === 'user' ? "flex-row-reverse" : "flex-row"
                 )}>
                   <Avatar className={cn(
-                    "h-10 w-10 shadow-md ring-2 ring-white",
+                    "h-10 w-10 border border-gray-200",
                     msg.role === 'assistant' ? "bg-red-50" : "bg-amber-50"
                   )}>
                     <AvatarFallback className={cn("font-black text-sm", msg.role === 'assistant' ? "text-red-600" : "text-amber-600")}>
@@ -136,10 +136,10 @@ const AIChat: React.FC = () => {
                     msg.role === 'user' ? "items-end" : "items-start"
                   )}>
                     <div className={cn(
-                      "p-6 rounded-[1.5rem] text-base md:text-lg leading-relaxed font-bold shadow-sm transition-all",
+                      "rounded-2xl border p-5 text-base font-medium leading-7 md:text-lg",
                       msg.role === 'user' 
-                        ? "bg-red-600 text-white rounded-tr-none shadow-red-100" 
-                        : "bg-gray-50 text-gray-800 rounded-tl-none border border-gray-100"
+                        ? "border-red-600 bg-red-600 text-white rounded-tr-none"
+                        : "border-gray-200 bg-gray-50 text-gray-800 rounded-tl-none"
                     )}>
                       {msg.content}
                     </div>
@@ -166,12 +166,12 @@ const AIChat: React.FC = () => {
               
               {isTyping && (
                 <div className="flex gap-5">
-                  <Avatar className="h-10 w-10 bg-red-50 shadow-md ring-2 ring-white">
+                  <Avatar className="h-10 w-10 border border-gray-200 bg-red-50">
                     <AvatarFallback className="text-red-600">
                       <Bot className="h-5 w-5" />
                     </AvatarFallback>
                   </Avatar>
-                  <div className="bg-gray-50 border border-gray-100 p-6 rounded-[1.5rem] rounded-tl-none flex gap-1.5 items-center shadow-sm">
+                  <div className="flex items-center gap-1.5 rounded-2xl rounded-tl-none border border-gray-200 bg-gray-50 p-6">
                     <div className="h-2 w-2 bg-red-200 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
                     <div className="h-2 w-2 bg-red-300 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
                     <div className="h-2 w-2 bg-red-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
@@ -190,7 +190,7 @@ const AIChat: React.FC = () => {
                   key={i}
                   disabled={isTyping}
                   onClick={() => handleSend(q)}
-                  className="text-[11px] font-black text-gray-500 bg-white border border-gray-100 px-5 py-2.5 rounded-full hover:border-red-600 hover:text-red-600 hover:bg-red-50 transition-all shadow-sm active:scale-95 disabled:opacity-50"
+                  className="rounded-xl border border-gray-200 bg-white px-4 py-2 text-[11px] font-bold text-gray-500 transition-colors hover:border-red-600 hover:bg-red-50 hover:text-red-600 disabled:opacity-50"
                 >
                   {q}
                 </button>
@@ -208,13 +208,13 @@ const AIChat: React.FC = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Hỏi bất cứ điều gì về lịch sử Việt Nam..."
-                className="pr-16 h-14 rounded-2xl border-gray-200 focus:border-red-600 focus:ring-red-100 bg-white shadow-xl shadow-gray-100 font-bold text-base md:text-lg placeholder:text-gray-300"
+                className="h-14 rounded-xl border-gray-200 bg-white pr-16 text-base font-medium placeholder:text-gray-400 focus:border-red-600 focus:ring-red-600/10 md:text-lg"
                 disabled={isTyping}
               />
               <Button 
                 type="submit"
                 disabled={!input.trim() || isTyping}
-                className="absolute right-2.5 h-11 w-11 rounded-xl bg-red-600 hover:bg-red-700 text-white shadow-xl shadow-red-200 transition-all active:scale-90"
+                className="absolute right-2.5 h-11 w-11 rounded-xl bg-red-600 text-white hover:bg-red-800"
                 size="icon"
               >
                 <Send className="h-5 w-5" />

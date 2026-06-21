@@ -7,16 +7,16 @@ const Root: React.FC = () => {
   const isChatPage = pathname === '/ai-chat';
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900 antialiased">
+    <div className="flex min-h-screen flex-col bg-white font-sans text-gray-900 antialiased">
       <Navigation />
-      <main>
+      <main className="flex-1">
         <Outlet />
       </main>
-      {!isChatPage && <footer className="border-t border-gray-100 bg-gray-50 py-12 mt-auto">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-red-800 font-bold text-lg mb-2">Lịch Sử Việt Nam — Nền Tảng Học Tập Tương Tác</p>
-          <p className="text-gray-500 text-sm italic mb-6">"Dân ta phải biết sử ta, Cho tường gốc tích nước nhà Việt Nam"</p>
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-gray-400 text-sm">
+      {!isChatPage && <footer className="mt-auto border-t border-gray-200 bg-red-50 py-14">
+        <div className="mx-auto max-w-7xl px-6 text-center sm:px-10">
+          <p className="font-serif text-2xl font-bold italic text-red-800">Lịch Sử Việt Nam — Nền Tảng Học Tập Tương Tác</p>
+          <p className="mb-8 mt-3 text-sm italic leading-6 text-gray-600">"Dân ta phải biết sử ta, Cho tường gốc tích nước nhà Việt Nam"</p>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 border-t border-red-600/20 pt-7 text-xs font-semibold uppercase tracking-wider text-gray-500">
             <span>© 2024 Nền tảng học tập THPT</span>
             <span>Trợ lý AI RAG</span>
             <span>Tài liệu tham khảo chính thống</span>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { BookOpen, MessageSquare, LineChart, Home } from 'lucide-react';
+import { BookOpen, Home, LineChart, MessageSquare } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Navigation: React.FC = () => {
@@ -12,42 +12,21 @@ const Navigation: React.FC = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-600 text-white font-bold text-lg">
-              S
-            </div>
-            <span className="text-xl font-bold text-red-800 hidden sm:block">Đại Việt Sử</span>
-          </div>
-          
-          <div className="flex items-center gap-1 sm:gap-6">
-            {navItems.map(({ to, label, icon: Icon }) => (
-              <NavLink
-                key={to}
-                to={to}
-                className={({ isActive }) =>
-                  cn(
-                    "flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                    isActive 
-                      ? "text-red-600 bg-red-50" 
-                      : "text-gray-600 hover:text-red-600 hover:bg-red-50/50"
-                  )
-                }
-              >
-                <Icon className="h-4 w-4" />
-                <span className="hidden md:block">{label}</span>
-              </NavLink>
-            ))}
-          </div>
-          
-          <div className="flex items-center">
-            <div className="h-8 w-8 rounded-full bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-700 text-xs font-bold">
-              THPT
-            </div>
-          </div>
+    <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white">
+      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8">
+        <NavLink to="/" className="flex items-center gap-3">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-red-600 font-serif text-lg font-bold text-white">S</span>
+          <span className="hidden font-serif text-xl font-bold italic text-red-800 sm:block">Đại Việt Sử</span>
+        </NavLink>
+        <div className="flex h-full items-center gap-1 sm:gap-3">
+          {navItems.map(({ to, label, icon: Icon }) => (
+            <NavLink key={to} to={to} className={({ isActive }) => cn('flex h-full items-center gap-2 border-b-2 px-2 text-sm font-semibold transition-colors sm:px-3', isActive ? 'border-red-600 text-red-600' : 'border-transparent text-gray-500 hover:text-red-600')}>
+              <Icon className="h-4 w-4 md:hidden" />
+              <span className="hidden md:block">{label}</span>
+            </NavLink>
+          ))}
         </div>
+        <span className="rounded-xl border border-amber-600 px-3 py-1.5 text-xs font-bold text-amber-600">THPT</span>
       </div>
     </nav>
   );

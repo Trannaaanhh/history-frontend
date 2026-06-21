@@ -19,30 +19,31 @@ const Lessons: React.FC = () => {
   const filters = ['All', 'Cơ bản', 'Trung bình', 'Nâng cao'] as const;
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-red-50/50 py-16 border-b border-red-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl font-extrabold text-red-800 mb-4 tracking-tight">Thư viện bài học</h1>
-            <p className="text-gray-600 text-lg leading-relaxed">
+      <div className="border-b border-gray-200 bg-red-50 py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-6 sm:px-10">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-amber-600">Chương trình THPT</p>
+            <h1 className="mb-5 font-serif text-4xl font-bold italic tracking-tight text-red-800 sm:text-5xl">Thư viện bài học</h1>
+            <p className="text-base leading-8 text-gray-600 sm:text-lg">
               Khám phá các thời kỳ lịch sử hào hùng của dân tộc Việt Nam qua hệ thống bài học được biên soạn công phu, bám sát chương trình THPT.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="mx-auto max-w-7xl px-6 py-12 sm:px-10 sm:py-16">
         {/* Toolbar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
+        <div className="mb-12 flex flex-col items-center justify-between gap-6 border-b border-gray-200 pb-8 md:flex-row">
           <div className="flex flex-wrap justify-center md:justify-start gap-2">
             {filters.map((f) => (
               <Button
                 key={f}
                 variant={filter === f ? 'default' : 'outline'}
                 className={filter === f 
-                  ? 'bg-red-600 hover:bg-red-700 border-none rounded-full px-6' 
-                  : 'border-gray-200 text-gray-600 hover:bg-gray-50 rounded-full px-6'}
+                  ? 'rounded-xl border-red-600 bg-red-600 px-5 hover:bg-red-800'
+                  : 'rounded-xl border-gray-200 bg-white px-5 text-gray-600 hover:border-red-600 hover:bg-red-50 hover:text-red-600'}
                 onClick={() => setFilter(f)}
                 size="sm"
               >
@@ -53,9 +54,9 @@ const Lessons: React.FC = () => {
           
           <div className="relative w-full md:w-80">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-            <Input 
+            <Input
               placeholder="Tìm kiếm bài học..." 
-              className="pl-10 border-gray-200 focus:border-red-300 focus:ring-red-100 rounded-full"
+              className="h-11 rounded-xl border-gray-200 bg-white pl-10 focus:border-red-600 focus:ring-red-600/10"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -63,7 +64,7 @@ const Lessons: React.FC = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredLessons.map((lesson) => (
             <LessonCard key={lesson.id} lesson={lesson} />
           ))}
