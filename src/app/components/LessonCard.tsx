@@ -20,7 +20,7 @@ const LessonCard: React.FC<LessonCardProps> = ({ lesson }) => {
 
   return (
     <Card className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white py-0 shadow-none transition-colors hover:border-red-600/40">
-      <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+      <div className="relative aspect-video overflow-hidden bg-gray-100">
         <ImageWithFallback
           src={lesson.imageUrl}
           alt={lesson.title}
@@ -36,12 +36,12 @@ const LessonCard: React.FC<LessonCardProps> = ({ lesson }) => {
         </div>
       </div>
       
-      <CardContent className="flex-grow p-6">
-        <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-amber-600">Bài học lịch sử</p>
-        <h3 className="mb-3 line-clamp-1 font-serif text-2xl font-bold text-red-800 transition-colors group-hover:text-red-600">
+      <CardContent className="flex-grow p-5">
+        <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.18em] text-amber-600">Bài học lịch sử</p>
+        <h3 className="mb-2 line-clamp-1 font-serif text-xl font-bold text-red-800 transition-colors group-hover:text-red-600">
           {lesson.title}
         </h3>
-        <p className="mb-5 line-clamp-3 text-sm leading-6 text-gray-600">
+        <p className="mb-4 line-clamp-2 text-sm leading-6 text-gray-600">
           {lesson.description}
         </p>
         
@@ -54,7 +54,7 @@ const LessonCard: React.FC<LessonCardProps> = ({ lesson }) => {
         </div>
       </CardContent>
       
-      <CardFooter className="mt-auto flex items-center justify-between border-t border-gray-200 p-5">
+      <CardFooter className="mt-auto flex items-center justify-between border-t border-gray-200 p-4">
         <div className="flex items-center gap-3 text-[11px] font-semibold text-gray-500">
           <span className="flex items-center gap-1">
             <Clock className="h-3.5 w-3.5" /> {lesson.duration} ph

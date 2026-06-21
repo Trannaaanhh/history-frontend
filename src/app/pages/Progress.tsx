@@ -37,7 +37,7 @@ const Progress: React.FC = () => {
     <div className="min-h-screen bg-gray-50 py-16">
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
         <div className="mb-12">
-          <h1 className="mb-3 font-serif text-5xl font-bold italic tracking-tight text-red-800">Tiến độ học tập</h1>
+          <h1 className="mb-3 font-serif text-4xl font-bold tracking-tight text-red-800">Tiến độ học tập</h1>
           <p className="text-gray-400 font-bold uppercase tracking-[0.2em] text-[10px]">Theo dõi hành trình chinh phục triều đại lịch sử của bạn</p>
         </div>
 

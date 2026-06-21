@@ -222,7 +222,7 @@ const AIChat: React.FC = () => {
             </form>
             <div className="flex items-center justify-center gap-2 mt-3">
               <div className="h-1 w-1 rounded-full bg-amber-400 animate-pulse" />
-              <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em] italic">
+              <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em]">
                 AI Phục vụ học tập - Dữ liệu chính thống
               </p>
             </div>

@@ -21,11 +21,11 @@ const Lessons: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="border-b border-gray-200 bg-red-50 py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-6 sm:px-10">
+      <div className="border-b border-gray-200 bg-red-50 py-12 sm:py-14">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10">
           <div className="max-w-3xl">
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-amber-600">Chương trình THPT</p>
-            <h1 className="mb-5 font-serif text-4xl font-bold italic tracking-tight text-red-800 sm:text-5xl">Thư viện bài học</h1>
+            <h1 className="mb-4 font-serif text-3xl font-bold tracking-tight text-red-800 sm:text-4xl">Thư viện bài học</h1>
             <p className="text-base leading-8 text-gray-600 sm:text-lg">
               Khám phá các thời kỳ lịch sử hào hùng của dân tộc Việt Nam qua hệ thống bài học được biên soạn công phu, bám sát chương trình THPT.
             </p>
@@ -33,9 +33,9 @@ const Lessons: React.FC = () => {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 py-12 sm:px-10 sm:py-16">
+      <div className="mx-auto max-w-6xl px-6 py-10 sm:px-10 sm:py-12">
         {/* Toolbar */}
-        <div className="mb-12 flex flex-col items-center justify-between gap-6 border-b border-gray-200 pb-8 md:flex-row">
+        <div className="mb-8 flex flex-col items-center justify-between gap-5 border-b border-gray-200 pb-6 md:flex-row">
           <div className="flex flex-wrap justify-center md:justify-start gap-2">
             {filters.map((f) => (
               <Button
@@ -64,7 +64,7 @@ const Lessons: React.FC = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filteredLessons.map((lesson) => (
             <LessonCard key={lesson.id} lesson={lesson} />
           ))}

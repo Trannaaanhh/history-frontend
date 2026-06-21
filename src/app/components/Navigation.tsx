@@ -16,7 +16,7 @@ const Navigation: React.FC = () => {
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8">
         <NavLink to="/" className="flex items-center gap-3">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-red-600 font-serif text-lg font-bold text-white">S</span>
-          <span className="hidden font-serif text-xl font-bold italic text-red-800 sm:block">Đại Việt Sử</span>
+          <span className="hidden font-serif text-xl font-bold text-red-800 sm:block">Đại Việt Sử</span>
         </NavLink>
         <div className="flex h-full items-center gap-1 sm:gap-3">
           {navItems.map(({ to, label, icon: Icon }) => (

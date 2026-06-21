@@ -40,7 +40,7 @@ const LessonDetail: React.FC = () => {
   return (
     <div className="flex min-h-screen flex-col bg-white">
       {/* Hero Header */}
-      <div className="relative h-[360px] w-full overflow-hidden md:h-[480px]">
+      <div className="relative h-[320px] w-full overflow-hidden md:h-[400px]">
         <ImageWithFallback
           src={lesson.imageUrl}
           alt={lesson.title}
@@ -52,7 +52,7 @@ const LessonDetail: React.FC = () => {
             <Link to="/lessons" className="text-white/70 hover:text-white flex items-center gap-1 text-xs font-bold uppercase tracking-wider mb-6 transition-colors">
               <ChevronLeft className="h-4 w-4" /> Thư viện bài học
             </Link>
-            <h1 className="mb-6 max-w-4xl font-serif text-4xl font-bold italic leading-tight tracking-tight text-white md:text-6xl">
+            <h1 className="mb-5 max-w-4xl font-serif text-3xl font-bold leading-tight tracking-tight text-white md:text-5xl">
               {lesson.title}
             </h1>
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-white/90 font-medium">
